@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Tajawal", sans-serif;
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+}
+
+.loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #121212;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease-out;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #00ff50;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.social-sidebar {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.social-sidebar img {
+    width: 35px;
+    transition: transform 0.3s ease;
+}
+
+.social-sidebar img:hover {
+    transform: scale(1.2);
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(18, 18, 18, 1)), url('../images/bg.gif') center/cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20%;
+    position: relative;
+}
+
+.hero-content {
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0;
+}
+
+.highlight {
+    color: transparent;
+    background: radial-gradient(circle, rgba(0, 255, 80, 1) 0%, rgba(0, 184, 10, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.typing-text {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: bold;
+    display: inline;
+}
+
+.static-text {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: bold;
+    color: transparent;
+    background: radial-gradient(circle, rgba(0, 255, 80, 1) 0%, rgba(0, 184, 10, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.logo-container {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.arrow {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-left: 5px solid white;
+    border-bottom: 5px solid white;
+    transform: rotate(-45deg);
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) rotate(-45deg); }
+    50% { transform: translateY(10px) rotate(-45deg); }
+}
+
+.languages {
+    padding: 50px 20px;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.underline {
+    width: 100px;
+    height: 4px;
+    background: radial-gradient(circle, rgba(0, 255, 80, 1) 0%, rgba(0, 184, 10, 1) 100%);
+    margin: 10px auto;
+}
+
+.skill-rating {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background: radial-gradient(circle, rgba(0, 255, 80, 1) 0%, rgba(0, 184, 10, 1) 100%);
+    transition: background-color 0.3s;
+}
+
+.dot.inactive {
+    background: radial-gradient(circle, rgba(0, 255, 80, 0.3) 0%, rgba(0, 255, 80, 0.1) 100%);
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 140px;
+    padding: 20px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card img {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+.my-projects {
+    padding: 50px 20px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.project-card .description {
+    font-size: 1em;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.project-card .tech-stack {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.project-card .tech-stack span {
+    background-color: #333;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+.view-button {
+    text-align: center;
+    padding: 10px 20px;
+    background: radial-gradient(circle, rgba(0, 255, 80, 0.7) 0%, rgba(0, 184, 10, 0.7) 100%);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+    background: radial-gradient(circle, rgba(0, 255, 80, 0.3) 0%, rgba(0, 255, 80, 0.1) 100%);
+}
+
+.footer {
+    padding: 20px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-text {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8em;
+}
+
+@media (max-width: 768px) {
+    .cards {
+        max-width: 560px;
+    }
+
+    .social-sidebar {
+        left: 5px;
+        padding: 15px 8px;
+    }
+
+    .social-sidebar img {
+        width: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .static-text, .typing-text {
+        font-size: 1rem;
+    }
+
+    .cards {
+        max-width: 280px;
+    }
+
+    .card {
+        width: 100px;
+        padding: 15px;
+    }
+
+    .card img {
+        width: 50px;
+    }
+}
